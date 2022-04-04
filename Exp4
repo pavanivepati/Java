@@ -1,0 +1,125 @@
+//4.1)Write a Java program to display the details of a person. Personal details
+should be
+given in one method and the qualification details in another method.
+
+
+Program:
+
+package pkg20a91a05j2;
+import java.util.Scanner;
+public class Person_Details {
+    String fname,mname,name,qualifi;
+    Scanner input=new Scanner(System.in);
+    public void getPersonal()
+    {
+        System.out.println("Enter your name :");
+        name=input.nextLine();
+        System.out.println("Enter your Father name :");
+        fname=input.nextLine();
+        System.out.println("Enter your Mother name :");
+        mname=input.nextLine();
+    }
+    public void getQualification()
+    {
+        System.out.println("Enter your Qualification :");
+        qualifi=input.nextLine();
+    }
+    public void putPersonal()
+    {
+        System.out.println("Your name is : "+name);
+        System.out.println("Your Father name is : "+fname);
+        System.out.println("Your Mother name is : "+mname);
+    }
+    public void putQualification()
+    {
+        System.out.println("Your Qualification is : "+qualifi);
+    }
+    public static void main(String a[])
+    {
+        Person_Details pd=new Person_Details();
+        pd.getPersonal();
+        pd.getQualification();
+        pd.putPersonal();
+        pd.putQualification();
+    }
+}
+
+output:
+Enter your name :
+RANI
+Enter your Father name :
+SRINU
+Enter your Mother name :
+DEVI
+Enter your Qualification :
+BTECH
+Your name is : RANI
+Your Father name is : SRINU
+Your Mother name is : DEVI
+Your Qualification is : BTECH
+
+
+//4.2)Write a Java program to implement constructor and constructor overloading.
+
+Program:
+
+package pkg20a91a05j2;
+public class COverloading
+{
+    public COverloading()
+    {
+        System.out.println("Deafault Constructor");
+    }
+    public COverloading(String a)
+    {
+        System.out.println("Parameters Passed: "+a);
+    }
+    public COverloading(int a,int b)
+    {
+        System.out.println("Two Argumrnts Passed . They are A: "+ a + " B: "+ b);
+        System.out.println("Sum of "+a+" and "+b+" is: "+(a+b));
+    }  
+    public static void main(String [] arg)
+    {
+        COverloading c=new COverloading();
+        COverloading c1=new COverloading("Hello");
+        COverloading c2=new COverloading(10,20);
+    }
+}
+
+output:
+Deafault Constructor
+Parameters Passed: Hello
+Two Argumrnts Passed . They are A: 10 B: 20
+Sum of 10 and 20 is: 30
+
+//4.3)Write a Java program to implement method overloading.
+
+program:
+
+public class Method_Overloading {
+    public Method_Overloading()
+    {
+        
+    }
+    public void add(int a,int b)
+    {
+        int sum=a+b;
+        System.out.println("Sum of "+a + "and "+b +" is: "+ sum);
+    }
+    public void add(int a,float b)
+    {
+       float sum=a+b;
+       System.out.println("Sum of "+a + "and "+b +" is: "+ sum);
+    }
+    public static void main(String args[])
+    {
+         Method_Overloading m=new  Method_Overloading();
+         m.add(10,20);
+         m.add(10, 12.52f);
+    }
+}
+
+output:
+Sum of 10and 20 is: 30
+Sum of 10and 12.52 is: 22.52
