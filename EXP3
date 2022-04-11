@@ -1,0 +1,173 @@
+//3.1)Write a Java program to implement binary search.
+
+package pkg20a91a05j2;
+import java.util.Scanner;
+public class BinarySearch {
+    public static void main(String args[])
+    {
+        int c,first,last,middle,n,search,array[];
+        Scanner in=new Scanner(System.in);
+        System.out.println("Enter number of elements:");
+        n=in.nextInt();
+        array=new int[n];
+        System.out.println("Enter "+n+" integers");
+        for(c=0;c<n;c++)
+            array[c]=in.nextInt();
+        System.out.println("Enter value to find :");
+        search=in.nextInt();
+        first=0;
+        last=n-1;
+        middle=(first+last)/2;
+        while(first<=last){
+            if(array[middle]<search)
+                first=middle+1;
+            else if(array[middle]==search)
+            {
+                System.out.println(search+" found at location "+(middle+1)+" ");
+                break;	
+            }
+            else
+                last=middle-1;
+        middle=(first+last)/2;
+        }
+        if(first>last)
+            System.out.println(search+" is not present in the list.\n");
+    }
+}
+output:
+Enter number of elements:
+10
+Enter 10 integers
+10 20 30 40 50 60 70 80 90 100
+Enter value to find :
+50
+50 found at location 5 
+
+
+//3.2)Write a Java program to sort for an element in a given list of elements
+using bubble sort
+
+package pkg20a91a05j2;
+public class BubbleSort {
+    static void Sort(int[] arr)
+    {
+        int n=arr.length;
+        int temp=0;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=1;j<(n-i);j++)
+            {
+                if(arr[j-1]>arr[j])
+                {
+                    temp=arr[j-1];
+                    arr[j-1]=arr[j];
+                    arr[j]=temp;
+                }
+            }
+        }
+    }
+    public static void main(String[] args)
+    {
+        int elements[]={3,60,35,2,45,320,5};
+        System.out.println("Array Before Bubble Sort ");
+        for(int i=0;i<elements.length;i++)
+        {
+            System.out.print(elements[i]+" ");
+        }
+        System.out.println();
+        Sort(elements);
+        System.out.println("Array After Bubble Sort ");
+        for(int i=0;i<elements.length;i++)
+        {
+            System.out.print(elements[i]+" ");
+        }
+    }   
+}
+output:
+Array Before Bubble Sort 
+3 60 35 2 45 320 5 
+Array After Bubble Sort 
+2 3 5 35 45 60 320
+
+3.3)Write a Java program to sort for an element in a given list of elements
+using merge sort.
+
+
+package pkg20a91a05j2;
+
+public class MergeSort {
+    void merge(int a[],int beg,int mid,int end)
+    {
+        int i,j,k;
+        int n1=mid-beg+1;
+        int n2=end-mid;
+        int LeftArray[]=new int[n1];
+        int RightArray[]=new int[n2];
+        for(i=0;i<n1;i++)
+            LeftArray[i]=a[beg+i];
+        for(j=0;j<n2;j++)
+            RightArray[j]=a[mid+1+j];
+        i=0;
+        j=0;
+        k=beg;
+        while(i<n1 && j<n2)
+        {
+            if(LeftArray[i]<=RightArray[j])
+            {
+                a[k]=LeftArray[i];
+                i++;
+            }
+            else
+            {
+                a[k]=RightArray[j];
+                j++;
+            }
+            k++;
+        }
+        while(i<n1)
+        {
+            a[k]=LeftArray[i];
+            i++;
+            k++;
+        }
+        while(j<n2)
+        {
+            a[k]=RightArray[j];
+            j++;
+            k++;
+        }
+    }        
+   void mergesort(int a[],int beg,int end)
+   {
+       if(beg<end)
+       {
+           int mid=(beg+end)/2;
+           mergesort(a,beg,mid);
+           mergesort(a,mid+1,end);
+           merge(a,beg,mid,end);
+       }
+   }
+   void PrintArray(int a[],int n)
+   {
+       int i;
+       for(i=0;i<n;i++)
+           System.out.print(a[i]+" ");
+   }
+   public static void main(String args[])
+   {
+       int a[]={11,30,24,7,31,16,39,41};
+       int n=a.length;
+       MergeSort m1=new MergeSort();
+       System.out.println("\nBefore  MergeSort");
+       m1.PrintArray(a,n);
+       m1.mergesort(a,0,n-1);
+       System.out.print("\nAfter MergeSort\n");
+       m1.PrintArray(a,n);
+       System.out.print("");
+   }
+}
+output:
+Before  MergeSort
+11 30 24 7 31 16 39 41 
+After MergeSort
+7 11 16 24 30 31 39 41
