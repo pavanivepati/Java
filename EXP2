@@ -27,6 +27,7 @@ public class Prime {
     
 }
 Output:
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97
  
 //2.2) Write a Java program to Find the sum of all even terms in the Fibonacci  sequence up  To the given range N.
 
@@ -64,7 +65,11 @@ public class Fibonacci_Even {
     }
 }
 Output:
- 
+Enter the range for Fibonacci Series
+10
+The Fibonacci Series is as follows : 
+0 1 1 2 3 5 8 13 21 34 55
+sum of Even Terms in Fibonacci series upto a range 10is: 88 
 
 //2.3) Write a Java program to check whether a given number is Armstrong or NOT.
 
@@ -89,4 +94,4 @@ public class Armstorng {
     }
 }
 Output:
- 
+ 1634is an Armstrong number
