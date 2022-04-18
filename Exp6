@@ -41,3 +41,48 @@ Sum of 10 and 20 is:30
 
 //6.2) Write a Java program to implement multi level Inheritance.
 
+program:
+
+class Base{
+    public Base(){
+        System.out.println("Inside Base Class");
+    }
+    public void display(){
+        System.out.println("Grand Parent for Derived2");
+    }
+}
+class Derived1 extends Base{
+    public Derived1(){
+        super.display();
+        System.out.println("Inside Derived1/Parent2");
+    }
+     public void display(){
+        System.out.println("Parent for Derived2");
+    }
+}
+class Derived2 extends Derived1{
+    public Derived2(){
+        super.display();
+        System.out.println("Inside Derived2");
+    }
+    public void display(){
+        System.out.println("Derived2");
+    }
+}
+public class Multilevel_Inheritance {
+    public static void main(String[] args){
+        Derived2 d = new Derived2();
+        d.display();
+    }
+}
+
+output:
+Inside Base Class
+Grand Parent for Derived2
+Inside Derived1/Parent2
+Parent for Derived2
+Inside Derived2
+Derived2
+
+6.3) Write a Java program to find the areas of different shapes using abstract
+classes.
