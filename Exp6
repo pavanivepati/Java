@@ -84,5 +84,75 @@ Parent for Derived2
 Inside Derived2
 Derived2
 
-6.3) Write a Java program to find the areas of different shapes using abstract
+//6.3) Write a Java program to find the areas of different shapes using abstract
 classes.
+
+Program:
+import java.util.*;
+abstract class shape
+{
+    int a,b;
+    abstract public void printarea();
+}
+class rectangle extends shape
+{
+    public int area_rect;
+    public void printarea(){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the length and breadth of rectangle");
+        a=s.nextInt();
+        b=s.nextInt();
+        area_rect=a*b;
+        System.out.println("Length of rectangle "+a+" breadth of rectangle "+b);
+        System.out.println("The area of rectangle is: "+area_rect);
+    } 
+}
+class triangle extends shape
+{
+    double area_tri;
+    public void printarea(){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the base and height of triangle");
+        a=s.nextInt();
+        b=s.nextInt();
+        System.out.println("Base of triangle "+a+" height of triangle "+b);
+        area_tri=(0.5*a*b);
+        System.out.println("The area of triangle is: "+area_tri);
+    }  
+}
+class circle extends shape
+{
+    double area_circle;
+    public void printarea(){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter the radius of circle");
+        a=s.nextInt();
+        System.out.println("Radius of circle "+a);
+        area_circle=(3.14*a*a);
+        System.out.println("The area of triangle is: "+area_circle);
+    }
+ }
+public class Abstract_Shape 
+{
+    public static void main(String[] args) {
+        rectangle r = new rectangle();
+        r.printarea();
+        triangle t = new triangle();
+        t.printarea();
+        circle r1 = new circle();
+        r1.printarea();
+    } 
+}
+Output:
+Enter the length and breadth of rectangle
+3 4
+Length of rectangle 3 breadth of rectangle 4
+The area of rectangle is: 12
+Enter the base and height of triangle
+5 2
+Base of triangle 5 height of triangle 2
+The area of triangle is: 5.0
+Enter the radius of circle
+6
+Radius of circle 6
+The area of triangle is: 113.03999999999999
